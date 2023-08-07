@@ -98,9 +98,7 @@ font-family: 'Roboto', sans-serif;
 
  
     <div class="head-txt">
-<h1 style="text-align: center; font-size: 16px; color: #0c0e28">
-        SOFTJOVIAL
-      </h1>
+
             <h3 style="font-size: 18px; text-align: center;">ACCOUNT RECOVERY</h3>
     </div>
 
@@ -139,12 +137,12 @@ font-family: 'Roboto', sans-serif;
         color: #0c0e28;
       "
     >
-      SOFTJOVIAL
+      BLUEKITE INVESTMENTS
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via softjovial
+      Disclaimer: this message was automatically generated via bluekite investments
       secured channel,please do not reply to this message all correspondence
-      should be addressed to softjovial.biz or your relationship officer
+      should be addressed to bluekiteinvestments.com or your relationship officer
     </p>
   </div>
  

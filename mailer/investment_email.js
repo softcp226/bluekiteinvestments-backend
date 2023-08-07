@@ -20,8 +20,8 @@ let transporter = nodemailer.createTransport({
   service: "Gmail",
   secure: false,
 
-   auth: {
-    user: process.ebizpany_mail,
+  auth: {
+    user: process.company_mail,
     pass: process.env.mail_password,
   },
 });
@@ -96,16 +96,14 @@ font-family: 'Roboto', sans-serif;
 
     <div class="head-txt">
 <div class="head-txt">
-      <h1 style="text-align: center; font-size: 16px; color: #0c0e28 ">
-       SOFTJOVIAL
-      </h1>
+      
       <h3 style="font-size: 15px;">DEPOSIT CONFIRMATION NOTIFICATION</h3>
     </div>
 
     <p class="sm-p">
       Dear ${userInfo.first_name} ${userInfo.last_name}, thanks for creating an investment with us 
       on <b>${datetime}</b>.
-    We understand that you entrust your financial investment and trading with us. We want to let you know that your investment is safe with us and we are entitled to give you the best service
+    We understand that you entrust your financial investment with us. We want to let you know that your investment is safe with us and we are entitled to give you the best service
     </p>
     <p class="sm-p">
     NB:you can view /cancel all your investment anytime from your dashboard/investments.
@@ -113,10 +111,7 @@ font-family: 'Roboto', sans-serif;
       relationship officer that would be assigned to you shortly
     </p>
 
-    <p class="sm-p">
-      incase you have any questions do not hesitate to contact us and we will
-      reach out to you as soon as possible
-    </p>
+  
     <h1
       style="
         font-size: 18px;
@@ -125,12 +120,12 @@ font-family: 'Roboto', sans-serif;
         color: #0c0e28 ;
       "
     >
-     SOFTJOVIAL.BIZ
+     BLUEKITE INVESTMENTS
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via softjovial
+      Disclaimer: this message was automatically generated via bluekite investments
       secured channel,please do not reply to this message all correspondence
-      should be addressed to softjovial.biz or your relationship officer
+      should be addressed to bluekiteinvestments.com or your relationship officer
     </p>
   </div>
 </main>

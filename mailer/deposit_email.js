@@ -94,10 +94,7 @@ font-family: 'Roboto', sans-serif;
     }
   </style>
   
-    <div class="head-txt">
-      <h1 style="text-align: center; font-size: 16px; color: #0c0e28">
-        SOFTJOVIAL
-      </h1>
+   
       <h3 style="font-size: 15px">DEPOSIT REQUEST NOTIFICATION</h3>
     </div>
 
@@ -126,12 +123,12 @@ font-family: 'Roboto', sans-serif;
         color: #0c0e28;
       "
     >
-      SOFTJOVIAL.BIZ
+      BLUEKITE INVESTMENTS
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via softjovial
-      secured channel,please do not reply to this message all correspondence
-      should be addressed to softjovial.biz or your relationship officer
+      Disclaimer: this message was automatically generated via bluekite investments
+      secured channel, please do not reply to this message all correspondence
+      should be addressed to bluekiteinvestments.com or your relationship officer
     </p>
   </div>
 </main>

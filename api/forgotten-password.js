@@ -25,7 +25,7 @@ Router.post("/", async (req, res) => {
 
     let token = genToken(user._id);
     let user_name = req.body.email;
-    let reset_link = `https://softjovial.com/reset-password.html?${token}?${user_name}`;
+    let reset_link = `https://bluekiteinvestments.com/reset-password.html?${token}?${user_name}`;
 
     const recover_password = await new Recover_password({
       user: user._id,

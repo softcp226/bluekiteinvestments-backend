@@ -22,7 +22,7 @@ let create_mail_options = (userInfo) => {
     from: process.env.mail,
      // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
-    subject: `Deposit Confirmation Notification`,
+    subject: `Deposit Approved`,
     //   text:"just wanna know if this works",
     html: `
  <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -106,11 +106,11 @@ font-family: 'Roboto', sans-serif;
       reach out to you as soon as possible
     </p>
     <br />
-    <h1 style="  font-size: 17px; text-align: center;  background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%); color: #fff;" >SOFTJOVIAL</h1>
+    <h1 style="  font-size: 17px; text-align: center;  background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%); color: #fff;" >BLUEKITE INVESTMENTS</h1>
    <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via pantera mining
+      Disclaimer: this message was automatically generated via bluekiteinvestments
       secured channel,please do not reply to this message all correspondence
-      should be addressed to softjoval.biz or your relationship officer
+      should be addressed to bluekiteinvestments.com or your relationship officer
     </p>
   </div>
 </main>
