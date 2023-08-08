@@ -48,7 +48,7 @@ Router.post("/", upload.any("passport"), verifyToken_01, async (req, res) => {
 
     const user_result = user.set({
       // referral_link: user._id,
-      referral_link:`https://softjovial.com?${user._id}`,
+      referral_link:`https://bluekiteinvestments.com?${user._id}`,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       passport: passport_url.url,

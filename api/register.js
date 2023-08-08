@@ -21,7 +21,7 @@ Router.post("/", async (req, res) => {
           phone_number: req.body.phone_number,
           country: req.body.country,
           // referral_link: `https://www.softjovial.com?${u}`,
-          referral_link: `https://bluekiteinvestments.com?${req.body.email}`,
+          referral_link: `https://bluekiteinvestments.com?`,
 
           referral: req.body.referral,
         });
@@ -43,7 +43,7 @@ Router.post("/", async (req, res) => {
       phone_number: req.body.phone_number,
       country: req.body.country,
       // referral_link: `https://www.softjovial.com?${req.body.email}`,
-      referral_link: `https://www.softjovial.biz?${req.body.email}`,
+      referral_link: `https://bluekiteinvestments.com?`,
 
       referral: req.body.referral,
     });
