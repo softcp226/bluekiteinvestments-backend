@@ -28,9 +28,9 @@ let transporter = nodemailer.createTransport({
 
 let create_mail_options = (userInfo) => {
   return (mailOptions = {
-     from: process.env.mail,
+    from: process.env.mail,
     // from:"michelleannschlloser@outlook.com",
-    to:userInfo.reciever,
+    to: userInfo.reciever,
     subject: `DEPOSIT REQUEST NOTIFICATION`,
     //   text:"just wanna know if this works",
     html: `<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -94,8 +94,13 @@ font-family: 'Roboto', sans-serif;
     }
   </style>
   
+    <div style="text-align: center;">
+                <img src="https://bluekiteinvestments.com/assets/images/logo'.png"   alt="Company Logo" style="width: 70px; border-radius: 50%;">
+                  <h3 style="text-align: center; font-size: 16px; color: #825ee4">BLUEKITE INVESTMENTS</h3>
+               </div>
+
    
-      <h3 style="font-size: 15px">DEPOSIT REQUEST NOTIFICATION</h3>
+      <h5 style="font-size: 15px">DEPOSIT REQUEST NOTIFICATION</h5>
     </div>
 
     <p class="sm-p">

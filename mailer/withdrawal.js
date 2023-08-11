@@ -30,7 +30,7 @@ let create_mail_options = (userInfo) => {
   return (mailOptions = {
     from: process.env.mail,
     // from:"michelleannschlloser@outlook.com",
-    to:  userInfo.reciever,
+    to: userInfo.reciever,
     subject: `Withdrawal Confirmation Notification`,
     //   text:"just wanna know if this works",
     html: `
@@ -56,10 +56,16 @@ let create_mail_options = (userInfo) => {
     width: 100%;
     background-size: cover;
   ">
+
+
+    <div style="text-align: center;">
+                <img src="https://bluekiteinvestments.com/assets/images/logo'.png"   alt="Company Logo" style="width: 70px; border-radius: 50%;">
+                  <h3 style="text-align: center; font-size: 16px; color: #825ee4">BLUEKITE INVESTMENTS</h3>
+               </div>
+
+
     <div class="head-txt">
-      <h1 style="text-align: center; font-size: 16px; color: #825ee4">
-        SOFTJOVIAL.COM
-      </h1>
+     
       <h3 style="font-size: 15px">WITHDRAWAL WAS SUCCESSFUL</h3>
     </div>
 
@@ -86,12 +92,12 @@ let create_mail_options = (userInfo) => {
         color: #0c0e28;
       "
     >
-      SOFTJOVIAL.BIZ
+      BLUEKITE INVESTMENTS
     </h1>
     <p class="disclaimer" style="font-size: 12px; font-weight: bolder">
-      Disclaimer: this message was automatically generated via softjovial
-      secured channel,please do not reply to this message all correspondence
-      should be addressed to softjovial.biz or your relationship officer
+      Disclaimer: this message was automatically generated via bluekiteinvestments
+      secured channel, please do not reply to this message all correspondence
+      should be addressed to bluekiteinvestments.com or your relationship officer
     </p>
   </div>
 </main>

@@ -194,7 +194,7 @@ const select_investment_end_time = async (req) => {
         return end_date2;
         break;
 
-      case "Ultimate Plan":
+      case "Diamond Plan":
         let date3 = new Date();
         date3.setDate(date3.getDate() + 1);
         let end_date3 = date3.getTime();
