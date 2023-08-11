@@ -59,7 +59,7 @@ let create_mail_options = (userInfo) => {
 
 
     <div style="text-align: center;">
-                <img src="https://bluekiteinvestments.com/assets/images/logo'.png"   alt="Company Logo" style="width: 70px; border-radius: 50%;">
+                <img src="https://bluekiteinvestments.com/assets/images/logo'.png"   alt="Company Logo" style="width: 70px; border-radius: 10px;">
                   <h3 style="text-align: center; font-size: 16px; color: #825ee4">BLUEKITE INVESTMENTS</h3>
                </div>
 
