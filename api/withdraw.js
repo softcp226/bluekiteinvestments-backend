@@ -33,13 +33,12 @@ Router.post("/", verifyToken, async (req, res) => {
     //       "To make a withdrawal of your money or registration bonus , you need to atleast make a first deposit",
     //   });
 
-     if (parseInt(req.body.withdrawal_amount) < 1500)
-       return res.status(400).json({
-         error: true,
-         errMessage:
-           "You have exceeded your trading limit for the basic plan, please deposit atleast $1,500 into your account to continue trading/withdrawal on the premium plan",
-       });
-
+    //  if (parseInt(req.body.withdrawal_amount) < 1500)
+    //    return res.status(400).json({
+    //      error: true,
+    //      errMessage:
+    //        "You have exceeded your trading limit for the basic plan, please deposit atleast $1,500 into your account to continue trading/withdrawal on the premium plan",
+    //    });
 
     user.set({
       final_balance: user.final_balance - parseInt(req.body.withdrawal_amount),
@@ -49,16 +48,23 @@ Router.post("/", verifyToken, async (req, res) => {
       currentdate.getMonth() + 1
     }-${currentdate.getDate()} -  ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
 
+    const withdrawal_transaction = await create_withdrawal_transaction(req);
+
     const withdrawal_request = await new Withdrawal_request({
       user: req.body.user,
       transaction_date: datetime,
       withdrawal_amount: req.body.withdrawal_amount,
       withdrawal_method: req.body.withdrawal_method,
       wallet: req.body.wallet,
+      withdrawal_transaction: withdrawal_transaction._id,
     });
-    create_withdrawal_transaction(req);
-    await user.save();
-    await withdrawal_request.save();
+
+    Promise.all([
+      await user.save(),
+      await withdrawal_transaction.save(),
+      await withdrawal_request.save(),
+    ]);
+
     transporter.sendMail(
       create_mail_options({
         first_name: user.first_name,
@@ -73,7 +79,7 @@ Router.post("/", verifyToken, async (req, res) => {
         //   error: true,
         //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
         // });
-      }
+      },
     );
 
     res.status(200).json({

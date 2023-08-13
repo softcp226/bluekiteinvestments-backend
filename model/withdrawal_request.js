@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const connect = require("./dbConnector");
 connect("connected to withdrawal request database");
 require("./user");
+require("./transaction")
 const withdrawal_request_Schema = mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -19,6 +20,11 @@ const withdrawal_request_Schema = mongoose.Schema({
   },
   withdrawal_method: {
     type: String,
+    required: true,
+  },
+  withdrawal_transaction:{
+ type: mongoose.Schema.Types.ObjectId,
+    ref: "transaction",
     required: true,
   },
   wallet: {

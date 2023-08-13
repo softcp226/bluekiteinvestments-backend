@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-// let transporter = nodemailer.createTransport({
+// let withdrawal_transaporter = nodemailer.createTransport({
 //   service: "Gmail",
 //   secure: false,
 
@@ -12,7 +12,7 @@ const nodemailer = require("nodemailer");
 //   },
 // });
 
-let transporter = nodemailer.createTransport({
+let withdrawal_transaporter = nodemailer.createTransport({
   service: "Gmail",
   secure: false,
 
@@ -26,12 +26,12 @@ let datetime = `${currentdate.getFullYear()}-${
   currentdate.getMonth() + 1
 }-${currentdate.getDate()} ${currentdate.getHours()}: ${currentdate.getMinutes()} : ${currentdate.getSeconds()}`;
 
-let create_mail_options = (userInfo) => {
+let withdrawal_mail_options = (userInfo) => {
   return (mailOptions = {
     from: process.env.mail,
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
-    subject: `Withdrawal Request Initiated`,
+    subject: `Withdrawal Failed`,
     //   text:"just wanna know if this works",
     html: `
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,20 +66,17 @@ let create_mail_options = (userInfo) => {
 
     <div class="head-txt">
      
-      <h3 style="font-size: 15px">WITHDRAWAL REQUEST INITIATED</h3>
+      <h3 style="font-size: 15px">WITHDRAWAL FAILED</h3>
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name}, we got your request to make a withdrawal of crypto that amounts $${userInfo.amount} from
-      your bluekite investment account on <b>${datetime}</b>.
-    </p>
-    <p class="sm-p">
-      NB: Our customer support need to check your account before they proccess this withdrawal.
+      Dear ${userInfo.first_name} ${userInfo.last_name},  your request to make a withdrawal of crypto that amounts $${userInfo.amount} from
+      your bluekite investment account on <b>${datetime}</b> failed.
     </p>
 
+
     <p class="sm-p">
-      incase you have any questions do not hesitate to contact us and we will
-      reach out to you as soon as possible
+      To get more informations on why your withdrawal failed please contact our customer support
     </p>
     <br />
    <h1
@@ -103,8 +100,8 @@ let create_mail_options = (userInfo) => {
  `,
   });
 };
-module.exports = { create_mail_options, transporter };
-// transporter.sendMail(mailOptions, (err, info) => {
+module.exports = { withdrawal_mail_options, withdrawal_transaporter };
+// withdrawal_transaporter.sendMail(mailOptions, (err, info) => {
 //   if (err)
 //     return res
 //       .status(400)

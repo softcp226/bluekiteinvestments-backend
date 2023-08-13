@@ -31,7 +31,7 @@ let create_mail_options = (userInfo) => {
     from: process.env.mail,
     // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
-    subject: `Withdrawal Request Initiated`,
+    subject: `Withdrawal Successful`,
     //   text:"just wanna know if this works",
     html: `
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,16 +66,14 @@ let create_mail_options = (userInfo) => {
 
     <div class="head-txt">
      
-      <h3 style="font-size: 15px">WITHDRAWAL REQUEST INITIATED</h3>
+      <h3 style="font-size: 15px">WITHDRAWAL SUCCESSFUL</h3>
     </div>
 
     <p class="sm-p">
-      Dear ${userInfo.first_name} ${userInfo.last_name}, we got your request to make a withdrawal of crypto that amounts $${userInfo.amount} from
-      your bluekite investment account on <b>${datetime}</b>.
+      Dear ${userInfo.first_name} ${userInfo.last_name},  your request to make a withdrawal of crypto that amounts $${userInfo.amount} from
+      your bluekite investment account on <b>${datetime}</b> has been approved and funds has been sent to the withdrawal details you provided during withdrawal
     </p>
-    <p class="sm-p">
-      NB: Our customer support need to check your account before they proccess this withdrawal.
-    </p>
+
 
     <p class="sm-p">
       incase you have any questions do not hesitate to contact us and we will
