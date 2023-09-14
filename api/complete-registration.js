@@ -8,6 +8,12 @@ const {
   create_mail_options,
   transporter,
 } = require("../mailer/reg_success_mail");
+
+const {
+  create_ref_mail_options,
+  ref_transporter,
+} = require("../mailer/referral_mail");
+
 const cloudinary = require("../file_handler/cloudinary");
 const upload = require("../file_handler/multer");
 const genToken = require("../token/genToken");
@@ -48,7 +54,7 @@ Router.post("/", upload.any("passport"), verifyToken_01, async (req, res) => {
 
     const user_result = user.set({
       // referral_link: user._id,
-      referral_link:`https://bluekiteinvestments.com?${user._id}`,
+      referral_link: `https://bluekiteinvestments.com?${user._id}`,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       passport: passport_url.url,
@@ -56,6 +62,29 @@ Router.post("/", upload.any("passport"), verifyToken_01, async (req, res) => {
     });
     await user_result.save();
     const token = genToken(user_result._id);
+
+    if (user.referral) {
+      const referral = await User.findById(user.referral);
+      if (referral) {
+
+          ref_transporter.sendMail(
+            create_ref_mail_options({
+              first_name: referral.first_name,
+              last_name: referral.last_name,
+              reciever: referral.email,
+            }),
+            (err, info) => {
+              if (err) return console.log(err.message);
+              console.log(info);
+              // return res.status(400).json({
+              //   error: true,
+              //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
+              // });
+            },
+          );
+
+      }
+    }
 
     transporter.sendMail(
       create_mail_options({
